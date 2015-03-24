@@ -20,7 +20,7 @@ You'll learn how to install the tools needed to build Android applications. If n
 
  - About 15 minutes
  - A favorite text editor or IDE
- - {jdk}[JDK 6] or later
+ - {jdk}[JDK 7] or later
 
 [[android-dev-env]]
 == Set up the Android development environment
@@ -66,7 +66,7 @@ NOTE: If this command does not open the *Android SDK Manager*, then your path is
 
 **2.** Select the **Tools** checkbox.
 
-**3.** Select the checkbox for the **latest Android SDK**, Android 4.4.2 (API Level 19) as of this writing.
+**3.** Select the checkbox for the **latest Android SDK**.
 
 **4.** From the **Extras** folder, select the checkbox for the **Android Support Library**.
 
@@ -80,11 +80,29 @@ NOTE: You may want to install all the available updates, but be aware it will ta
 If you do not have an Android device for testing, you can use an Android virtual device.To do this, you must first install the Android SDK and install the corresponding SDK platforms and packages. See <<android-dev-env>>.
 
 
-This command creates a new AVD named "Default" that is based on Android 4.4.2, API Level 19:
+This command creates a new AVD named "Default" that is based on Android 5.1, API Level 22:
 
 ----
-android create avd --name Default --target android-19 --abi armeabi-v7a
+android create avd --name Default --target android-22 --abi armeabi-v7a
 ----
+
+Press enter when prompted to create a custom hardware profile.
+
+....
+Android 5.1 is a basic Android platform.
+Do you wish to create a custom hardware profile [no]
+....
+
+The AVD is created and the details are displayed.
+
+....
+Created AVD 'Default' based on Android 5.1, ARM (armeabi-v7a) processor,
+with the following hardware config:
+hw.cpu.model=cortex-a8
+hw.lcd.density=240
+hw.ramSize=512
+vm.heapSize=48
+....
 
 As an alternative you may also use the android GUI tool to create an AVD.
 
@@ -100,16 +118,16 @@ This command displays a list of available targets. Use these targets to create d
 android list target
 ----
 
-You can see that the target value of "29" is associated with Android 4.2.2. Note the three ABIs (CPUs) available for this target ID. The command used earlier to create the AVD specified an ARM CPU.
+You can see that the target value of "android-22" is associated with Android 5.1. Note the ABIs (CPUs) available for this target ID. The command used earlier to create the AVD specified an ARM CPU.
 
 ....
-       id: 19 or "android-19"
-     Name: Android 4.4.2
+       id: 19 or "android-22"
+     Name: Android 5.1
      Type: Platform
-API level: 19
- Revision: 3
+API level: 22
+ Revision: 1
     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
-Tag/ABIs : default/armeabi-v7a, default/x86
+Tag/ABIs : android-tv/armeabi-v7a, android-tv/x86, default/armeabi-v7a, default/x86, default/x86_64
 ....
 
 View the list of available AVDs with this command:
@@ -121,11 +139,11 @@ android list avd
 Here is the AVD that was just created:
 
 ....
-   Name: Default
-   Path: /Users/{user}/.android/avd/Default.avd
- Target: Android 4.4.2 (API level 19)
-Tag/ABI: default/armeabi-v7a
-   Skin: WVGA800
+    Name: Default
+    Path: /Users/{user}/.android/avd/Default.avd
+  Target: Android 5.1 (API level 22)
+ Tag/ABI: default/armeabi-v7a
+    Skin: WVGA800
 ....
 
 
