@@ -4,13 +4,15 @@ projects: [spring-android]
 ---
 :Platforms_and_Packages: http://developer.android.com/sdk/installing/adding-packages.html
 :Android_Developers: http://developer.android.com/sdk/installing/index.html
+:Environment_variables: https://developer.android.google.cn/studio/command-line/variables
 :jdk: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 :sdk: http://developer.android.com/sdk/index.html
 :toc:
 :icons: font
 :source-highlighter: prettify
 :project_id: gs-android
-This guide describes how to install the Android developer environment.
+This guide describes older way how to install the Android developer environment.  
+For latest recommendations check {Environment_variables}[Environment variables] and use JDK 8.
 
 == What you'll build
 
